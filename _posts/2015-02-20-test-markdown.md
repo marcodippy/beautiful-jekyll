@@ -2,6 +2,7 @@
 layout: post
 title: Test markdown
 subtitle: Each post also has a subtitle
+published: true
 ---
 
 You can write regular [markdown](http://markdowntutorial.com/) here and Jekyll will automatically convert it to a nice webpage.  I strongly encourage you to [take 5 minutes to learn how to write in markdown](http://markdowntutorial.com/) - it'll teach you how to transform regular text into bold/italics/headings/tables/etc.
@@ -40,6 +41,15 @@ var foo = function(x) {
   return(x + 5);
 }
 foo(3)
+```
+
+Some scala code:
+
+```scala
+trait Functor[F[_]]  { self =>
+  /** Lift `f` into `F` and apply to `F[A]`. */
+  def map[A, B](fa: F[A])(f: A => B): F[B] 
+}
 ```
 
 And here is the same code yet again but with line numbers:
