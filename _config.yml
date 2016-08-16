@@ -38,16 +38,16 @@ avatar: "/img/avatar-icon.png"
 # Change all these values or delete the ones you don't want.
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
-  name: Some Person
+  name: Marco Di Paola
   email: "youremail@domain.com"
   facebook: marcodippy
   github: marcodippy
   twitter: marco_dpl
   linkedin: dipaolamarco
   #xing: yourname      
-  #stackoverflow: yourlink  # eg. "3943160/daattali"
-  #instagram: yourname # eg. daattali
-  #youtube: yourlink # eg. user/daattali or channel/daattali
+  #stackoverflow: yourlink
+  #instagram: yourname
+  #youtube: yourlink
 
 # Select which links to show in the footer
 footer-links-active:
