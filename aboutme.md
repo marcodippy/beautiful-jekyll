@@ -9,7 +9,7 @@ My name is Marco Di Paola, software engineer by vocation, recently felt in love 
 
 I created this blog for three main reasons:
 
-- As Einstein said, ”You do not really understand something unless you can explain it to your grandmother”.
+- As Einstein said, "You do not really understand something unless you can explain it to your grandmother".
 - I want to prove to myself that I can still start a new project and keep it alive for a while.
 - My English sucks, writing a blog can be a way to improve.
 
