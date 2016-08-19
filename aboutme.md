@@ -2,15 +2,14 @@
 layout: page
 title: About me
 subtitle: Why you'd want to go on a date with me
+published: true
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+My name is Marco Di Paola, software engineer by vocation, recently felt in love with Scala and Functional Programming.
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+I created this blog for three main reasons:
 
-What else do you need?
+- As Einstein said, ”You do not really understand something unless you can explain it to your grandmother”.
+- I want to prove to myself that I can still start a new project and keep it alive for a while.
+- My English sucks, writing a blog can be a way to improve.
 
-### my history
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
