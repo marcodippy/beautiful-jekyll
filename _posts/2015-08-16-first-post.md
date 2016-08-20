@@ -74,4 +74,7 @@ This time the outcome is different... why? The _append_ function is not pure.
 What I just showed here is called ***substitution model*** and is it possible thanks to a property of pure functions called ***referencial transparency***.
 
 
+Ok... Why are those things important?
+Think about the example using the _StringBuilder.append_ function: if you want to mentally get the result of each expression in the code you need to keep track of the state changes around your function, whereas with pure functions the effects of evaluation are purely local (only the evaluated expression is affected); nderstanding requires only ***local reasoning***.
+
 
