@@ -25,24 +25,29 @@ You can ****trust**** pure functions. They are ****transparent****, there's noth
 Think about the _plus_ function: would you ever doubt that 2 + 3 = 5 ?
 _plus_ is a pure function, we can trust it, so we are allowed to solve this piece of code like it was an algebraic equation:
 
+
 ```scala
 val a = 2
 val b = a + 3
-val c = b + 5
+val c = b + 5 // c = 10, do you agree?
 ```
 
-Step 1: replace _a_ with its value
+Step 1: replace _a_
 ```scala
 val a = 2
 val b = 2 + 3
 val c = b + 5
 ```
 
-Step 2: replace _b_ with its value
+Step 2: replace _b_
 ```scala
 val a = 2
 val b = 2 + 3
-val c = 2 + 3 + 5 
+val c = 2 + 3 + 5 // c = 10
 ```
+
+We can see that the result _c_ is still the same.
+
+The typical counterexample is done with the nasty _append_ function from the `java.lang.StringBuilder` class.
 
 
