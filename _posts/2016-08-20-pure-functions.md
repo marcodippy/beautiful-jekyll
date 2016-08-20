@@ -77,7 +77,7 @@ val s2 = hello.append(" World").toString() // "Hello World World"
 
 This time the outcome is different... why? The _append_ function is not pure.
 
-What I just showed here is called ***substitution model*** and is it possible thanks to a property of pure functions called ***referencial transparency*** (formally an expression is said to be referentially transparent if it can be replaced with its value without changing the behavior of a program).
+What I just showed here is called ***substitution model*** and it's possible thanks to a property of pure functions called ***referencial transparency*** (formally an expression is said to be referentially transparent if it can be replaced with its value without changing the behavior of a program).
 
 ### Ok... Why are those things important?
 
