@@ -39,7 +39,7 @@ avatar: "/img/me.jpg"
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
   name: Marco Di Paola
-  email: "youremail@domain.com"
+  email: "dpl{dot}marco{at}gmail{dot}com"
   facebook: marcodippy
   github: marcodippy
   twitter: marco_dpl
@@ -71,7 +71,7 @@ share-links-active:
 
 # How to display the link to the website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "marcodippy.github.io"
+url-pretty: "www.mdipaola.com"
 
 # --- Misc --- #
 
