@@ -50,4 +50,28 @@ We can see that the result _c_ is still the same.
 
 The typical counterexample is done with the nasty _append_ function from the `java.lang.StringBuilder` class.
 
+```scala
+val hello = new StringBuilder("Hello")
+val helloWorld = hello.append(" World")
+
+val s1 = helloWorld.toString()
+val s2 = helloWorld.toString()
+
+//s1 == s2 == "Hello World"
+```
+
+Let's try to apply the same substitution process as before and replace the _helloWorld_ variable:
+
+```scala
+val hello = new StringBuilder("Hello")
+
+val s1 = hello.append(" World").toString() // "Hello World"
+val s2 = hello.append(" World").toString() // "Hello World World"
+```
+
+This time the outcome is different... why? The _append_ function is not pure.
+
+What I just showed here is called ****substitution model**** and is it possible thanks to the ****referencial transparency**** property of pure functions.
+
+
 
