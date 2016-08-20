@@ -37,6 +37,7 @@ val c = b + 5 // c = 10, do you agree?
 ```
 
 Step 1: replace _a_
+
 ```scala
 val a = 2
 val b = 2 + 3
@@ -44,6 +45,7 @@ val c = b + 5
 ```
 
 Step 2: replace _b_
+
 ```scala
 val a = 2
 val b = 2 + 3
