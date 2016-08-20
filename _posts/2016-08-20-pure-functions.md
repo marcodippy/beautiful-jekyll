@@ -88,6 +88,8 @@ Another cool thing about RT expressions is that they are *deterministic* and the
 
 ## So, side effects suck and we'll never use them.
 Nope. You can't program without effects. You'll want to write to a DB at some point. You'll need to log something. Effects are inevitable at some point.
+
 Generally you have two solutions:
+
 - keep the core of your program made of pure function and push every effect to the outer layer of the program responsible to handle the effects.
 - keep the effect *unobservable* (for example you can always mutate data declared locally in a function and never referenced outside it)
