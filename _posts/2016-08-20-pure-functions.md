@@ -12,6 +12,7 @@ published: true
 The first key concept you'll encounter if you start reading about _functional programming_ is ***pure function***.
 
 A function is pure if:
+
 - its result is ***always*** the same given the same input ( A=>B is pure if it relates every _a_ of type A with exactly one _b_ of type B such that _b_ is determined solely by the value of _a_ )
 - it has ***no side effects***
 
