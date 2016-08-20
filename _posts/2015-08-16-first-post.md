@@ -7,11 +7,11 @@ tags:
 published: false
 ---
 
-The first key concept you'll encounter if you start reading about _functional programming_ is ****pure function****.
+The first key concept you'll encounter if you start reading about _functional programming_ is ***pure function***.
 
 A function is pure if:
 - its result is ****always**** the same given the same input ( A=>B is pure if it relates every _a_ of type A with exactly one _b_ of type B such that _b_ is determined solely by the value of _a_ )
-- it has ****no side effects****
+- it has ***no side effects***
 
 _Side Effects???_ If a function does something more than merely returning a result, all this stuff in excess is side effect: throwing an exception, performing I/O, setting a variable, modifying some kind of state in general... 
 
@@ -20,7 +20,7 @@ The absence of side effects in our functions make them more general, easier to t
 
 ## > Pure functions are easier to reason about.
 
-You can ****trust**** pure functions. They are ****transparent****, there's nothing hidden inside them, everything a function does is represented by the value that it returns.
+You can ***trust*** pure functions. They are ***transparent***, there's nothing hidden inside them, everything a function does is represented by the value that it returns.
 
 Think about the _plus_ function: would you ever doubt that 2 + 3 = 5 ?
 _plus_ is a pure function, we can trust it, so we are allowed to solve this piece of code like it was an algebraic equation:
@@ -71,7 +71,7 @@ val s2 = hello.append(" World").toString() // "Hello World World"
 
 This time the outcome is different... why? The _append_ function is not pure.
 
-What I just showed here is called ****substitution model**** and is it possible thanks to the ****referencial transparency**** property of pure functions.
+What I just showed here is called ***substitution model*** and is it possible thanks to a property of pure functions called ***referencial transparency***.
 
 
 
