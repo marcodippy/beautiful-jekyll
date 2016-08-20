@@ -23,6 +23,7 @@ The absence of side effects in our functions make them more general, easier to t
 You can ***trust*** pure functions. They are ***transparent***, there's nothing hidden inside them, everything a function does is represented by the value that it returns.
 
 Think about the _plus_ function: would you ever doubt that 2 + 3 = 5 ?
+
 _plus_ is a pure function, we can trust it, so we are allowed to solve this piece of code like it was an algebraic equation:
 
 
