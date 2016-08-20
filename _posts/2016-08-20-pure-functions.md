@@ -12,7 +12,7 @@ published: true
 The first key concept you'll encounter if you start reading about _functional programming_ is ***pure function***.
 
 A function is pure if:
-- its result is ****always**** the same given the same input ( A=>B is pure if it relates every _a_ of type A with exactly one _b_ of type B such that _b_ is determined solely by the value of _a_ )
+- its result is ***always*** the same given the same input ( A=>B is pure if it relates every _a_ of type A with exactly one _b_ of type B such that _b_ is determined solely by the value of _a_ )
 - it has ***no side effects***
 
 _Side Effects???_ If a function does something more than merely returning a result, all this stuff in excess is side effect: throwing an exception, performing I/O, setting a variable, modifying some kind of state in general... 
