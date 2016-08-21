@@ -47,7 +47,21 @@ foo(new CovariantLeash[Bulldog]) // success
 ```
 
 Great, this new leash can be used with `Dog`, `Chiwawa` and `Bulldog`, meaning that 
-`CovariantLeash[Chiwawa]` and `CovariantLeash[Chiwawa]` are now subtypes of `CovariantLeash[Dog]`
+`CovariantLeash[Chiwawa]` and `CovariantLeash[Chiwawa]` are now subtypes of `CovariantLeash[Dog]`.
+This is ***covariance***.
 
 
+
+I love my pets, I don't want my chiwawa and my bulldog to be leashed, but I still want to own a leash for dogs and animals in general. Let's buy a ***contravariant*** leash!
+
+```scala
+class CovariantLeash[+A]
+
+def foo(x : ContravariantLeash[Dog]) : ContravariantLeash[Dog] = identity(x)
+
+foo(new ContravariantLeash[Animal])  // success
+foo(new ContravariantLeash[Dog])     // success
+foo(new ContravariantLeash[Chiwawa]) // type error
+foo(new ContravariantLeash[Bulldog]) // type error
+```
 
