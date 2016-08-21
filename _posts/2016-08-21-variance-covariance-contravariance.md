@@ -55,7 +55,7 @@ This is ***covariance***.
 I love my pets, I don't want my chiwawa and my bulldog to be leashed, but I still want to own a leash for dogs and animals in general. Let's buy a ***contravariant*** leash!
 
 ```scala
-class CovariantLeash[+A]
+class CovariantLeash[-A]
 
 def foo(x : ContravariantLeash[Dog]) : ContravariantLeash[Dog] = identity(x)
 
