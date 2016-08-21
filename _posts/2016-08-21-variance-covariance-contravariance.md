@@ -2,6 +2,11 @@
 layout: post
 published: false
 title: 'Variance, Covariance and Contravariance'
+tags:
+  - functional-programming
+  - variance
+  - covariance
+  - contravariance
 ---
 
 Everytime I read something about variance I get confused. It's worth reorganising some concepts and write them down in a blog post!
@@ -61,4 +66,3 @@ foo(new ContravariantLeash[Dog])     // success
 foo(new ContravariantLeash[Chiwawa]) // type error
 foo(new ContravariantLeash[Bulldog]) // type error
 ```
-
