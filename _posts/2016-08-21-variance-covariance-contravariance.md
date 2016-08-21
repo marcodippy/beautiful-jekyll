@@ -28,7 +28,7 @@ foo(new InvariantLeash[Chiwawa]) // type error
 foo(new InvariantLeash[Bulldog]) // type error
 ```
 
-We can see that there is no relashion between InvariantLeash[Dog] and InvariantLeash[Animal] or between InvariantLeash[Dog] and InvariantLeash[Chiwawa].
+We can see that there is no relashion between `InvariantLeash[Dog]` and `InvariantLeash[Animal]` or between `InvariantLeash[Dog]` and `InvariantLeash[Chiwawa]`.
 The leash can be used only for the specific class it's been created for, in this case `Dog` (pretty useless in this case).
 
 Our chiwawa is getting old, maybe is time to get a more generic leash that can be used also for other dog breeds.
