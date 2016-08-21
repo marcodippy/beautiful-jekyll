@@ -62,3 +62,5 @@ foo(new ContravariantLeash[Chiwawa]) // type error
 foo(new ContravariantLeash[Bulldog]) // type error
 ```
 
+
+So far so good.
