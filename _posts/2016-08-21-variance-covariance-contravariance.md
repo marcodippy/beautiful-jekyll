@@ -51,7 +51,6 @@ Great, this new leash can be used with `Dog`, `Chiwawa` and `Bulldog`, meaning t
 This is ***covariance***.
 
 
-
 I love my pets, I don't want my chiwawa and my bulldog to be leashed, but I still want to own a leash for dogs and animals in general. Let's buy a ***contravariant*** leash!
 
 ```scala
