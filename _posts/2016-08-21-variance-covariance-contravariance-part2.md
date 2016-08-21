@@ -18,7 +18,7 @@ class Kennel[+A] {
 }
 ```
 
-Unfortunately this doesn't work and the error is quite cryptic. But this make a lot of sense, especially if we take a look at how Function1 is defined in scala:
+Unfortunately this doesn't work and the error is quite cryptic. But this make a lot of sense, especially if we take a look at how `Function1` is defined in Scala:
 
 ```scala
 trait Function1[-T1, +R] {
@@ -26,4 +26,7 @@ trait Function1[-T1, +R] {
 }
 ```
 
-Function1 is _contravariant_ on its argument and covariant on its result
+Function1 is _contravariant_ on its argument and covariant on its result (in general input parameters are contravariant and results are covariant).
+Everything makes more sense if you think about automatic type conversions: you can substitute the input parameter _t_ with something with *fewer requirements* (hence more general), while the function should return a type *at least as specialised as R* (the caller might expect all the methods on R to be available).
+
+
