@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'Variance, Covariance and Contravariance'
 tags:
   - functional-programming
@@ -66,3 +66,5 @@ foo(new ContravariantLeash[Dog])     // success
 foo(new ContravariantLeash[Chiwawa]) // type error
 foo(new ContravariantLeash[Bulldog]) // type error
 ```
+
+So far so good, this the easiest part. More details about variance in the second part of this post.
