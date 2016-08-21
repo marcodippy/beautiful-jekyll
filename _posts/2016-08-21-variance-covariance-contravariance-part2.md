@@ -2,6 +2,11 @@
 layout: post
 published: false
 title: 'Variance, Covariance and Contravariance - Part 2'
+tags:
+  - functional-programming
+  - variance
+  - covariance
+  - contravariance
 ---
 
 So far so good. Now we want a house for our pet; I can imagine that a generic kennel for `Dog` can be fine for `Chiwawa` and `Bulldog` as well.
