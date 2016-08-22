@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'Variance, Covariance and Contravariance - Part 2'
 tags:
   - functional-programming
