@@ -104,14 +104,14 @@ class Kennel[-A] {
 
 The compilers says `Error: "Contravariant type A occurs in covariant position in type A of value get"`.
 
-Being Kennel contravariant means that we could do something like:
+Being `Kennel` contravariant means that we could do something like:
 
 ```scala
 val animalKennel: Kennel[Animal] = new Kennel[Animal]
 val dogKennel: Kennel[Dog] = animalKennel
 ```
 
-If Kennel[Animal].get returns instances of the Animal class, are we really sure that we wanto to be able to use it in every place that expects a Kennel[Dog]? Nope.
+If `Kennel[Animal].get` returns instances of `Animal`, are we really sure that we wanto to be able to use it in every place that expects a `Kennel[Dog]`? Nope.
 
 A way to make it compile is 
 
