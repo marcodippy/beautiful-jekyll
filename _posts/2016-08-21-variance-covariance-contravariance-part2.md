@@ -35,7 +35,7 @@ Let's try to explain it in other terms: suppose you have a `Function1[Dog, Any]`
 
 
 
-## Function parameters are contravariant 
+### Function parameters are contravariant 
 For example, you need a function `val tweet: (Bird => String)`: if you have a function `val sound: (Animal => String)` it's perfectly fine, `Bird` is also an `Animal`
 
 ```scala
@@ -50,7 +50,7 @@ val tweet: (Bird => String) = ((c: Chicken) => c.sound )
 
 might not work for `Duck` for example.
 
-## Function results are covariant
+### Function results are covariant
 This is even simpler to demonstrate; assume for a moment that a hierarchy like this exists:
 
 - Animal 
@@ -64,6 +64,7 @@ you need a function `hatch` to produce a `Bird`... it can produce a `Chicken`, i
 ```scala
 val hatch: (() => Bird) = (() => new Chicken)
 ```
+
 
 
 
