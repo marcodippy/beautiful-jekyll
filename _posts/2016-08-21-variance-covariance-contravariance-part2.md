@@ -65,7 +65,19 @@ you need a function `hatch` to produce a `Bird`... it can produce a `Chicken`, i
 val hatch: (() => Bird) = (() => new Chicken)
 ```
 
+## The Scala compiler is our friend
+Working with variance annotation can be tricky, but fortunately the compiler is our ally and it prevents us to make stupid things. An example of _stupid thing_ is:
 
+```scala
+class Kennel[+A] {
+	def put(animal: A): Unit = ???
+}
+```
+
+The compilers doesn't like that and gives us `Error: "Covariant type A occurs in contravariant position in type A of value animal"`.
+
+
+If the print method can print Dogs does it make sense (in general) that it should also print Animals? Maybe sometimes but in the general sense if we want to generalize the Printer class we should use contravariance. The compiler is smart enough to check this type of usage for us.
 
 
 
