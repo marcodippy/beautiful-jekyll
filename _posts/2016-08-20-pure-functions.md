@@ -7,6 +7,7 @@ tags:
   - referencial-transparency
   - substitution-model
 published: true
+date: '2016-08-20'
 ---
 
 The first key concept you'll encounter if you start reading about _functional programming_ is ***pure function***.
