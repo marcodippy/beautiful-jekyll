@@ -158,7 +158,7 @@ trait Covariant[+A] {
 - Covariant type parameters can appear:
     - in _lower bounds_ of method type parameters (_foo_)
     - as method results (_baz_)
-    - as mutable field type only if the field has object private scope (private[this])
+    - as mutable field type only if the field has object private scope (`private[this]`)
 - Generally used in producers (types that return something) and immutable data
     
 
@@ -175,6 +175,6 @@ trait Contravariant[-A] {
 - Contravariant type parameters can appear:
     - in _upper bounds_ of method type parameters (_foo_)
     - as method arguments (_baz_)
-    - as mutable field type only if the field has object private scope (private[this])
+    - as mutable field type only if the field has object private scope (`private[this]`)
 - Generally used in consumers (types that accept something) and immutable data
 
