@@ -176,5 +176,5 @@ trait Contravariant[-A] {
     - in _upper bounds_ of method type parameters (_foo_)
     - as method arguments (_baz_)
     - as mutable field type only if the field has object private scope (`private[this]`)
-- Generally used in consumers (types that accept something) and immutable data
+- Generally used in consumers (types that accept something)
 
