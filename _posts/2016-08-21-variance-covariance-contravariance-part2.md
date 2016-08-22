@@ -124,15 +124,9 @@ class Kennel[-A] {
 An this works because 
 > _contravariant_ type parameters may appear only in ***upper bounds*** of method type parameters
 
+-----
 
-## Variance Positions
-So, Scala compiler enforces some rules one the variance annotations position, the foundamental ones are:
-
-- _covariant_ type parameters can appear only in method results
-- _contravariant_ type parameters can appear only in method parameters
-- _invariant_ type parameters can appear everywhere
-
-Luckily the compiler does all these checks for us and we don't have to remember all the laws :)
+Luckily we don't need to remember all the variance position laws, the compiler does all the work for us :)
 
 -----
 
@@ -147,7 +141,7 @@ trait Invariant[A] {
 }
 ```
 
-- Invariant[Dog] has no relation with Invariant[Animal]
+- `Invariant[Dog]` has no relation with `Invariant[Animal]`
 - Invariant type parameters can be used everywhere
 
 
@@ -160,7 +154,7 @@ trait Covariant[+A] {
 }
 ```
 
-- Covariant[Dog] is subtype of Covariant[Animal]
+- `Covariant[Dog]` is subtype of `Covariant[Animal]`
 - Covariant type parameters can appear:
     - in _lower bounds_ of method type parameters (_foo_)
     - as method results (_baz_)
@@ -177,7 +171,7 @@ trait Contravariant[-A] {
 }
 ```
 
-- Contravariant[Dog] is super type of Contravariant[Animal]
+- `Contravariant[Dog]` is super type of `Contravariant[Animal]`
 - Contravariant type parameters can appear:
     - in _upper bounds_ of method type parameters (_foo_)
     - as method arguments (_baz_)
