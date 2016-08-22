@@ -71,6 +71,9 @@ foo(new ContravariantLeash[Bulldog]) // type error
 ```
 
 
+------
+
+
 
 So far so good. Now we want a house for our pet; I can imagine that a generic kennel for `Dog` can be fine for `Chiwawa` and `Bulldog` as well.
 
