@@ -81,7 +81,8 @@ case class List[+T](h: T, t: List[T]) {
 }
 ```
 
-An this works because 
+An this works because
+
 > _covariant_ type parameters may appear only in ***lower bounds*** of method type parameters
 
 Note that now the _prepend_ method has a slightly less restrictive type: you are allowed to prepend an object of a supertype to an existing list, e.g:
@@ -122,6 +123,7 @@ class Kennel[-A] {
 ```
 
 An this works because 
+
 > _contravariant_ type parameters may appear only in ***upper bounds*** of method type parameters
 
 -----
@@ -177,4 +179,3 @@ trait Contravariant[-A] {
     - as method arguments (_baz_)
     - as mutable field type only if the field has object private scope (`private[this]`)
 - Generally used in consumers (types that accept something)
-
