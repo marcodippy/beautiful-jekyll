@@ -44,11 +44,11 @@ might not work for `Duck` for example.
 ### Function results are covariant
 This is even simpler to demonstrate; assume for a moment that a hierarchy like this exists:
 
-- Animal 
-	- Phoenix 
-    	- Bird 
-    		- Chicken
-        	- Duck
+* Animal 
+	* Phoenix 
+    	* Bird 
+    		* Chicken
+        	* Duck
 
 you need a function `hatch` to produce a `Bird`... it can produce a `Chicken`, it can produce a `Duck`... should it produce a `Phoenix`??? Nope.
 
