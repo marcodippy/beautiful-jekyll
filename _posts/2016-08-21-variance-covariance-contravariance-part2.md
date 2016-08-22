@@ -76,7 +76,7 @@ class Kennel[+A] {
 
 The compilers doesn't like that and gives us `Error: "Covariant type A occurs in contravariant position in type A of value animal"`.
 
-Remember, that being Kennel covariant means that we can do something like this:
+Remember, that being Kennel covariant means that we could do something like this:
 
 ```scala
 val dogKennel: Kennel[Dog] = new Kennel[Dog]
@@ -94,4 +94,13 @@ class Kennel[-A] {
 ```
 
 The compilers says `Error: "Contravariant type A occurs in covariant position in type A of value get"`.
+
+Being Kennel contravariant means that we could do something like:
+
+```scala
+val animalKennel: Kennel[Animal] = new Kennel[Animal]
+val dogKennel: Kennel[Dog] = animalKennel
+```
+
+Again, if Kennel[Animal].get returns instances of the Animal class, are we really sure that we wanto to be able to use it in every place that expects a Kennel[Dog]? Nope.
 
