@@ -76,8 +76,22 @@ class Kennel[+A] {
 
 The compilers doesn't like that and gives us `Error: "Covariant type A occurs in contravariant position in type A of value animal"`.
 
+Remember, that being Kennel covariant means that we can do something like this:
 
-If the print method can print Dogs does it make sense (in general) that it should also print Animals? Maybe sometimes but in the general sense if we want to generalize the Printer class we should use contravariance. The compiler is smart enough to check this type of usage for us.
+```scala
+val dogKennel: Kennel[Dog] = new Kennel[Dog]
+val animalKennel: Kennel[Animal] = dogKennel
+```
 
+If the _put_ method can operate on `Dogs` does it make sense (in general) that it should also work on `Animals`? If so, we should generalize the Kennel class by using *contravariance*
 
+Another example of _stupid thing_ is:
+
+```scala
+class Kennel[-A] {
+	def get: A
+}
+```
+
+The compilers says `Error: "Contravariant type A occurs in covariant position in type A of value get"`.
 
