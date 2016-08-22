@@ -83,7 +83,14 @@ val dogKennel: Kennel[Dog] = new Kennel[Dog]
 val animalKennel: Kennel[Animal] = dogKennel
 ```
 
-If the _put_ method can operate on `Dogs` does it make sense (in general) that it should also work on `Animals`? If so, we should generalize the Kennel class by using *contravariance*
+If the _put_ method can operate on `Dogs` does it make sense (in general) that it should also work on `Animals`? If so, we should generalize the Kennel class by using *contravariance*, otherwise the way to fix this by using ***lower bounds***:
+
+```scala
+class Kennel[+A] {
+	def put[B >: A](b: B): Unit = ???
+}
+```
+
 
 Another example of _stupid thing_ is:
 
@@ -103,4 +110,19 @@ val dogKennel: Kennel[Dog] = animalKennel
 ```
 
 Again, if Kennel[Animal].get returns instances of the Animal class, are we really sure that we wanto to be able to use it in every place that expects a Kennel[Dog]? Nope.
+
+## Variance Positions
+So, Scala compiler enforces some rules one the variance annotations position, the foundamental ones are:
+
+- _covariant_ type parameters can appear only in method results
+- _contravariant_ type parameters can appear only in method parameters
+- _invariant_ type parameters can appear everywhere
+
+Luckily the compiler does all these checks for us and we don't have to remember all the laws :)
+
+## Generic Rules
+Covariancy
+- for immutable (typically), but mutable cannot
+
+
 
