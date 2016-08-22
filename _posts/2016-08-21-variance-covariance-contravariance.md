@@ -67,4 +67,13 @@ foo(new ContravariantLeash[Chiwawa]) // type error
 foo(new ContravariantLeash[Bulldog]) // type error
 ```
 
-So far so good, this the easiest part. More details about variance in the second part of this post.
+So far so good. Now we want a house for our pet; I can imagine that a generic kennel for `Dog` can be fine for `Chiwawa` and `Bulldog` as well.
+
+```scala
+class Kennel[+A] {
+  def put(animal : A) : Kennel[A] 
+  //Error: "Covariant type A occurrs in contravariant position in type A of value animal"
+}
+```
+
+Unfortunately this doesn't work and the error is quite cryptic. A bit deeper dive into variance is necessary to understand this dark matter, if you're interested you can find the second part of this post here.
