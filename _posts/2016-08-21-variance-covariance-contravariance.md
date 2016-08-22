@@ -84,5 +84,5 @@ class Kennel[+A] {
 }
 ```
 
-Unfortunately this doesn't work and the error is quite cryptic. A bit deeper dive into variance is necessary to understand this dark matter, if you're interested you can find [the second part of this post here.](./2016-08-22-variance-covariance-contravariance-part2.md)
+Unfortunately this doesn't work and the error is quite cryptic. A bit deeper dive into variance is necessary to understand this dark matter, if you're interested you can find [the second part of this post here.](../2016-08-22-variance-covariance-contravariance-part2.md)
 
