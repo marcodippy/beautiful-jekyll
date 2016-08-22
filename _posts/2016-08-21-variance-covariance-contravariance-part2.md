@@ -60,31 +60,37 @@ val hatch: (() => Bird) = (() => new Chicken)
 Working with variance annotation can be tricky, but fortunately the compiler is our ally and it prevents us to make stupid things. An example of _stupid thing_ is:
 
 ```scala
-class Kennel[+A] {
-	def put(animal: A): Unit = ???
+case class List[+T](h: T, t: List[T]) {
+  def head: T = h
+  def tail: List[T] = t
+  def prepend(elem: T): List[T] = List(elem, this)
 }
 ```
 
-The compilers doesn't like that and gives us `Error: "Covariant type A occurs in contravariant position in type A of value animal"`.
+The compilers doesn't like the _prepend_ method and gives us `Error: "Covariant type A occurs in contravariant position in type A of value elem"`.
 
-Remember, that being Kennel covariant means that we could do something like this:
+An input parameter being covariant means that it would be bound to a subtype but be invokable with a base type. This is an impossible conversion, because a base type cannot be converted to a subtype.
 
-```scala
-val dogKennel: Kennel[Dog] = new Kennel[Dog]
-val animalKennel: Kennel[Animal] = dogKennel
-```
-
-If the _put_ method can operate on `Dogs` does it make sense (in general) that it should also work on `Animals`? If so, we should generalize the Kennel class by using *contravariance*, otherwise the way to fix this is using ***lower bounds***:
+The way to fix this is using ***lower bounds***:
 
 ```scala
-class Kennel[+A] {
-	def put[B >: A](b: B): Unit = ???
+case class List[+T](h: T, t: List[T]) {
+  def head: T = h
+  def tail: List[T] = t
+  def prepend[U >: T](elem: U): List[U] =  List(elem, this)
 }
 ```
-An this works because of two basic rules of variance:
 
-- _covariant_ type parameters may appear only in ***lower bounds*** of method type parameters
-- _contravariant_ type parameters may appear only in ***upper bounds*** of method type parameters
+An this works because 
+> _covariant_ type parameters may appear only in ***lower bounds*** of method type parameters
+
+Note that now the _prepend_ method has a slightly less restrictive type: you are allowed to prepend an object of a supertype to an existing list, e.g:
+
+```scala
+val chiwawaList: List[Chiwawa] = new List[Chiwawa](new Chiwawa, null)
+val mammalList: List[Mammal] = chiwawaList.prepend(new Mammal)
+```
+
 
 
 Another example of _stupid thing_ is:
@@ -105,6 +111,18 @@ val dogKennel: Kennel[Dog] = animalKennel
 ```
 
 Again, if Kennel[Animal].get returns instances of the Animal class, are we really sure that we wanto to be able to use it in every place that expects a Kennel[Dog]? Nope.
+
+A way to make it compile is 
+
+```scala
+class Kennel[-A] {
+    def get[B <: A]: B
+}
+```
+
+An this works because 
+> _contravariant_ type parameters may appear only in ***upper bounds*** of method type parameters
+
 
 ## Variance Positions
 So, Scala compiler enforces some rules one the variance annotations position, the foundamental ones are:
