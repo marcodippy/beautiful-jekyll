@@ -91,6 +91,7 @@ val chiwawaList: List[Chiwawa] = new List[Chiwawa](new Chiwawa, null)
 val mammalList: List[Mammal] = chiwawaList.prepend(new Mammal)
 ```
 
+-----
 
 
 Another example of _stupid thing_ is:
@@ -110,7 +111,7 @@ val animalKennel: Kennel[Animal] = new Kennel[Animal]
 val dogKennel: Kennel[Dog] = animalKennel
 ```
 
-Again, if Kennel[Animal].get returns instances of the Animal class, are we really sure that we wanto to be able to use it in every place that expects a Kennel[Dog]? Nope.
+If Kennel[Animal].get returns instances of the Animal class, are we really sure that we wanto to be able to use it in every place that expects a Kennel[Dog]? Nope.
 
 A way to make it compile is 
 
