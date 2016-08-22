@@ -7,6 +7,7 @@ tags:
   - variance
   - covariance
   - contravariance
+date: '2016-08-22'
 ---
 
 To better understand how variance works, let's inspect the definition of the trait `Function1` 
