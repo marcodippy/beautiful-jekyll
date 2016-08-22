@@ -40,13 +40,13 @@ For example, you need a function `val tweet: (Bird => String)`: if you have a fu
 
 ```scala
 val tweet: (Bird => String) = ((a: Animal) => a.sound )
-```scala
+```
 
 While 
 
 ```scala
 val tweet: (Bird => String) = ((c: Chicken) => c.sound )
-```scala
+```
 
 might not work for `Duck` for example.
 
@@ -63,7 +63,7 @@ you need a function `hatch` to produce a `Bird`... it can produce a `Chicken`, i
 
 ```scala
 val hatch: (() => Bird) = (() => new Chicken)
-```scala
+```
 
 
 
