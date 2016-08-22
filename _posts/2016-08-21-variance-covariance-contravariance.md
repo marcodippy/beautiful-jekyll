@@ -36,6 +36,8 @@ foo(new InvariantLeash[Bulldog]) // type error
 We can see that there is no relation between `InvariantLeash[Dog]` and `InvariantLeash[Animal]` or between `InvariantLeash[Dog]` and `InvariantLeash[Chiwawa]`.
 The leash can be used only for the specific class it's been created for, in this case `Dog` (pretty useless in this case).
 
+## Covariant type parameters can automatically morph into one of their base types when necessary.
+
 Our chiwawa is getting old, maybe is time to get a more generic leash that can be used also for other dog breeds.
 
 ```scala
@@ -53,6 +55,7 @@ Great, this new leash can be used with `Dog`, `Chiwawa` and `Bulldog`, meaning t
 `CovariantLeash[Chiwawa]` and `CovariantLeash[Chiwawa]` are now subtypes of `CovariantLeash[Dog]`.
 This is ***covariance***.
 
+## Contravariance is where a type parameter may morph into a subtype.
 
 I love my pets, I don't want my chiwawa and my bulldog to be leashed, but I still want to own a leash for dogs and animals in general. Let's buy a ***contravariant*** leash!
 
@@ -66,6 +69,8 @@ foo(new ContravariantLeash[Dog])     // success
 foo(new ContravariantLeash[Chiwawa]) // type error
 foo(new ContravariantLeash[Bulldog]) // type error
 ```
+
+
 
 So far so good. Now we want a house for our pet; I can imagine that a generic kennel for `Dog` can be fine for `Chiwawa` and `Bulldog` as well.
 
