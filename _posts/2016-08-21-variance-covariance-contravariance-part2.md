@@ -9,16 +9,7 @@ tags:
   - contravariance
 ---
 
-So far so good. Now we want a house for our pet; I can imagine that a generic kennel for `Dog` can be fine for `Chiwawa` and `Bulldog` as well.
-
-```scala
-class Kennel[+A] {
-  def put(animal : A) : Kennel[A] 
-  //Error: "Covariant type A occurrs in contravariant position in type A of value animal"
-}
-```
-
-Unfortunately this doesn't work and the error is quite cryptic. But this make a lot of sense, especially if we take a look at how `Function1` is defined in Scala:
+To better understand how variance works, let's inspect the definition of the trait `Function1` 
 
 ```scala
 trait Function1[-T1, +R] {
@@ -83,13 +74,17 @@ val dogKennel: Kennel[Dog] = new Kennel[Dog]
 val animalKennel: Kennel[Animal] = dogKennel
 ```
 
-If the _put_ method can operate on `Dogs` does it make sense (in general) that it should also work on `Animals`? If so, we should generalize the Kennel class by using *contravariance*, otherwise the way to fix this by using ***lower bounds***:
+If the _put_ method can operate on `Dogs` does it make sense (in general) that it should also work on `Animals`? If so, we should generalize the Kennel class by using *contravariance*, otherwise the way to fix this is using ***lower bounds***:
 
 ```scala
 class Kennel[+A] {
 	def put[B >: A](b: B): Unit = ???
 }
 ```
+An this works because of two basic rules of variance:
+
+- _covariant_ type parameters may appear only in ***lower bounds*** of method type parameters
+- _contravariant_ type parameters may appear only in ***upper bounds*** of method type parameters
 
 
 Another example of _stupid thing_ is:
