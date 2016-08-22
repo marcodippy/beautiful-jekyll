@@ -134,9 +134,53 @@ So, Scala compiler enforces some rules one the variance annotations position, th
 
 Luckily the compiler does all these checks for us and we don't have to remember all the laws :)
 
-## Generic Rules
-Covariancy
-- for immutable (typically), but mutable cannot
+-----
+
+# *TL;DR*
+
+## Invariant 
+
+```scala
+trait Invariant[A] {
+  def foo(a: A): Unit
+  def baz: A
+}
+```
+
+- Invariant[Dog] has no relation with Invariant[Animal]
+- Invariant type parameters can be used everywhere
 
 
+## Covariant
+
+```scala
+trait Covariant[+A] {
+  def foo[B >: A](b: B): Unit
+  def baz: A
+}
+```
+
+- Covariant[Dog] is subtype of Covariant[Animal]
+- Covariant type parameters can appear:
+    - in _lower bounds_ of method type parameters (_foo_)
+    - as method results (_baz_)
+    - as mutable field type only if the field has object private scope (private[this])
+- Generally used in producers (types that return something) and immutable data
+    
+
+## Contravariant
+
+```scala
+trait Contravariant[-A] {
+  def foo[B <: A](): B
+  def baz(a: A): Unit
+}
+```
+
+- Contravariant[Dog] is super type of Contravariant[Animal]
+- Contravariant type parameters can appear:
+    - in _upper bounds_ of method type parameters (_foo_)
+    - as method arguments (_baz_)
+    - as mutable field type only if the field has object private scope (private[this])
+- Generally used in consumers (types that accept something) and immutable data
 
